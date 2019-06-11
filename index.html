@@ -61,19 +61,17 @@
             </div>
             <script>
                 // Write your code here
+                document.getElementById("greetingsBox").addEventListener("keyup", validateForm);
+
                 function validateForm() {
                     var x = document.getElementById("greetingsBox").value;
-                    console.log(x)
                     document.getElementsByClassName("greetingsBoxHolder")[0].innerHTML = x
 
-                    // if (input == "") {
-                    //     console.log("if statement")
-                    //     var x = "Nothing to show"
-                    //     console.log("nothing to show")
-                    // }
+                    if (x == "") {
+                        var x = "Nothing to show"
+                        document.getElementsByClassName("greetingsBoxHolder")[0].innerHTML = x
+                    }
                 }
-
-                document.getElementById("greetingsBox").addEventListener("keyup", validateForm);
             </script>
         </div>
         <!-- END OF Part 1 -->
@@ -120,8 +118,26 @@
                 </table>
             </div>
             <script>
-            // Write your code here
-            </script>
+                // Write your code here
+                var nameInput = document.getElementById("name");
+                document.getElementById("name").addEventListener("keyup", checkEmpty);
+
+                var pizzaInput = document.getElementById("pizza");
+                document.getElementById("pizza").addEventListener("keyup", checkEmpty);
+
+                var sizeInput = document.getElementById("size");
+                document.getElementById("size").addEventListener("keyup", checkEmpty);
+
+                function checkEmpty () {
+                    if (event.keyCode === 13) {
+                        
+                        if (nameInput == "") {
+                            
+                        }
+                    }
+                }
+                
+                </script>
         </div>
         <!-- END OF Part 2 -->
 
