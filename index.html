@@ -106,12 +106,14 @@
                     </thead>
                     <tbody>
                         <tr id="emptyRow">
-                            <td><input type="text" id="name" class="form-control" placeholder="Fill in your name"></td>
+                            <td><input type="text" id="name" class="form-control" 
+                                    placeholder="Fill in your name"></td>
                             <td><input type="text" id="pizza" class="form-control"
                                     placeholder="Fill in your pizza choice"></td>
                             <td><input type="text" id="size" class="form-control"
                                     placeholder="Fill in your chosen size"></td>
-                            <td><input type="text" id="remarks" class="form-control" placeholder="Fill in your remarks">
+                            <td><input type="text" id="remarks" class="form-control" 
+                                    placeholder="Fill in your remarks">
                             </td>
                         </tr>
                     </tbody>
@@ -130,8 +132,10 @@
 
                 function checkEmpty () {
                     if (event.keyCode === 13) {
-                        
                         if (nameInput == "") {
+                            document.getElementsById("nameInput").innerHTML = "Please fill in this field";
+                        }
+                        else {
                             
                         }
                     }
