@@ -119,21 +119,24 @@
             </div>
             <script>
                 // Write your code here
-                document.getElementById("name").addEventListener("keyup", checkEmpty);
-                document.getElementById("pizza").addEventListener("keyup", checkEmpty);
                 document.getElementById("size").addEventListener("keyup", checkEmpty);
                 document.getElementById("remarks").addEventListener("keyup", checkEmpty);
 
-                var nameInput = document.getElementById("name");
-                var pizzaInput = document.getElementById("pizza");
-                var sizeInput = document.getElementById("size");
-                var remarksInput = document.getElementById("remarks");
-
                 function checkEmpty() {
 
+                    var nameInput = document.getElementById("name");
+                    var pizzaInput = document.getElementById("pizza");
+                    var sizeInput = document.getElementById("size");
+                    var remarksInput = document.getElementById("remarks");
+
                     if (event.keyCode === 13) {
-                        createRow();
-                        resetPizzaOrders();
+                        if (nameInput.value.length != 0 && pizzaInput.value.length != 0 && sizeInput.value.length != 0) {
+                            createRow();
+                            resetPizzaOrders();
+                        }
+                        else {
+                            alert("Please fill in all fields!");
+                        }
                     }
                 }
 
@@ -151,7 +154,6 @@
                 }
 
                 function resetPizzaOrders() {
-                    console.log("reset")
                     document.getElementById("name").value = "";
                     document.getElementById("pizza").value = "";
                     document.getElementById("size").value = "";
