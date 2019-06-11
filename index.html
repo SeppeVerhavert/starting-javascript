@@ -152,7 +152,13 @@
                     cell1.innerHTML = nameInput.value;
                     cell2.innerHTML = pizzaInput.value;
                     cell3.innerHTML = sizeInput.value;
-                    cell4.innerHTML = remarksInput.value + "<i class=\"fas fa-window-close\"></i>";
+                    cell4.innerHTML = "<i id=\"icon\" class=\"fas fa-window-close\"></i> " + remarksInput.value;
+
+                    document.getElementById("icon").addEventListener("click", deleteRow); 
+
+                    function deleteRow() {
+                            var row = table.deleteRow(-1);
+                        }                    
                 }
 
                 function resetPizzaOrders() {
@@ -161,6 +167,7 @@
                     document.getElementById("size").value = "";
                     document.getElementById("remarks").value = "";
                 }
+
             </script>
         </div>
         <!-- END OF Part 2 -->

@@ -34,3 +34,8 @@
 .hide {
     display:none;
 }
+
+.fas {
+    color: rgb(223, 32, 32);
+    text-align: right;
+}
