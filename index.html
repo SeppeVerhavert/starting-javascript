@@ -122,12 +122,12 @@
                 document.getElementById("size").addEventListener("keyup", checkEmpty);
                 document.getElementById("remarks").addEventListener("keyup", checkEmpty);
 
-                function checkEmpty() {
+                var nameInput = document.getElementById("name");
+                var pizzaInput = document.getElementById("pizza");
+                var sizeInput = document.getElementById("size");
+                var remarksInput = document.getElementById("remarks");
 
-                    var nameInput = document.getElementById("name");
-                    var pizzaInput = document.getElementById("pizza");
-                    var sizeInput = document.getElementById("size");
-                    var remarksInput = document.getElementById("remarks");
+                function checkEmpty() {
 
                     if (event.keyCode === 13) {
                         if (nameInput.value.length != 0 && pizzaInput.value.length != 0 && sizeInput.value.length != 0) {
