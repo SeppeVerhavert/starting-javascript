@@ -193,7 +193,6 @@
                 <p id="listHolder">This is what you need to make delicious spaghetti:
                     <span>Pasta</span><span>Tomato Sauce</span><span>Cheese</span><span>Choose your final
                         ingredient</span></p>
-
                 <br>
                 <br>
 
@@ -214,10 +213,23 @@
                 }
 
                 function makeListItem() {
-                    console.log("you clicked somewhere else")
-                    var ingredient = document.getElementById("ingredientInput");
-                    console.log(ingredient)
+
+                    var list = document.getElementById('ingredientList');
+                    var ingredient = document.getElementById("ingredientInput").value;
+
+                    addListItem();
+
+                    function addListItem() {
+                        if (ingredient.length != 0) {
+                            var entry = document.createElement('li');
+                            entry.appendChild(document.createTextNode(ingredient));
+                            list.appendChild(entry);
+                        }
+                        
+                    }
                 }
+
+
             </script>
         </div>
         <!-- END OF Part 3 -->
