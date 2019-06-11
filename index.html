@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/style.css">
 
 </head>
 
@@ -62,15 +62,18 @@
             <script>
                 // Write your code here
                 function validateForm() {
-                    var x = document.getElementById(greetingsBox).value;
-                    console.log("function validateForm")
-                    if (x == "") {
-                        console.log("if statement")
-                        var x = "Nothing to show"
-                        console.log("nothing to show")
-                    }
+                    var x = document.getElementById("greetingsBox").value;
+                    console.log(x)
+                    document.getElementsByClassName("greetingsBoxHolder")[0].innerHTML = x
+
+                    // if (input == "") {
+                    //     console.log("if statement")
+                    //     var x = "Nothing to show"
+                    //     console.log("nothing to show")
+                    // }
                 }
-                validateForm();
+
+                document.getElementById("greetingsBox").addEventListener("keyup", validateForm);
             </script>
         </div>
         <!-- END OF Part 1 -->
