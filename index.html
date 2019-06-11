@@ -122,6 +122,7 @@
                 document.getElementById("name").addEventListener("keyup", checkEmpty);
                 document.getElementById("pizza").addEventListener("keyup", checkEmpty);
                 document.getElementById("size").addEventListener("keyup", checkEmpty);
+                document.getElementById("remarks").addEventListener("keyup", checkEmpty);
 
                 var nameInput = document.getElementById("name");
                 var pizzaInput = document.getElementById("pizza");
@@ -130,18 +131,14 @@
 
                 function checkEmpty() {
 
-                    console.log(nameInput.value)
-                    console.log(pizzaInput.value)
-                    console.log(sizeInput.value)
-
                     if (event.keyCode === 13) {
                         createRow();
+                        resetPizzaOrders();
                     }
                 }
 
                 function createRow() {
                     var table = document.getElementById("pizzaOrders");
-                    console.log("createdRow")
                     var row = table.insertRow(-1);
                     var cell1 = row.insertCell(0);
                     var cell2 = row.insertCell(1);
@@ -153,6 +150,13 @@
                     cell4.innerHTML = remarksInput.value;
                 }
 
+                function resetPizzaOrders() {
+                    console.log("reset")
+                    document.getElementById("name").value = "";
+                    document.getElementById("pizza").value = "";
+                    document.getElementById("size").value = "";
+                    document.getElementById("remarks").value = "";
+                }
             </script>
         </div>
         <!-- END OF Part 2 -->
