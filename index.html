@@ -106,14 +106,12 @@
                     </thead>
                     <tbody>
                         <tr id="emptyRow">
-                            <td><input type="text" id="name" class="form-control" 
-                                    placeholder="Fill in your name"></td>
+                            <td><input type="text" id="name" class="form-control" placeholder="Fill in your name"></td>
                             <td><input type="text" id="pizza" class="form-control"
                                     placeholder="Fill in your pizza choice"></td>
                             <td><input type="text" id="size" class="form-control"
                                     placeholder="Fill in your chosen size"></td>
-                            <td><input type="text" id="remarks" class="form-control" 
-                                    placeholder="Fill in your remarks">
+                            <td><input type="text" id="remarks" class="form-control" placeholder="Fill in your remarks">
                             </td>
                         </tr>
                     </tbody>
@@ -121,27 +119,41 @@
             </div>
             <script>
                 // Write your code here
-                var nameInput = document.getElementById("name");
                 document.getElementById("name").addEventListener("keyup", checkEmpty);
-
-                var pizzaInput = document.getElementById("pizza");
                 document.getElementById("pizza").addEventListener("keyup", checkEmpty);
-
-                var sizeInput = document.getElementById("size");
                 document.getElementById("size").addEventListener("keyup", checkEmpty);
 
-                function checkEmpty () {
+                var nameInput = document.getElementById("name");
+                var pizzaInput = document.getElementById("pizza");
+                var sizeInput = document.getElementById("size");
+                var remarksInput = document.getElementById("remarks");
+
+                function checkEmpty() {
+
+                    console.log(nameInput.value)
+                    console.log(pizzaInput.value)
+                    console.log(sizeInput.value)
+
                     if (event.keyCode === 13) {
-                        if (nameInput == "") {
-                            document.getElementsById("nameInput").innerHTML = "Please fill in this field";
-                        }
-                        else {
-                            
-                        }
+                        createRow();
                     }
                 }
-                
-                </script>
+
+                function createRow() {
+                    var table = document.getElementById("pizzaOrders");
+                    console.log("createdRow")
+                    var row = table.insertRow(-1);
+                    var cell1 = row.insertCell(0);
+                    var cell2 = row.insertCell(1);
+                    var cell3 = row.insertCell(2);
+                    var cell4 = row.insertCell(3);
+                    cell1.innerHTML = nameInput.value;
+                    cell2.innerHTML = pizzaInput.value;
+                    cell3.innerHTML = sizeInput.value;
+                    cell4.innerHTML = remarksInput.value;
+                }
+
+            </script>
         </div>
         <!-- END OF Part 2 -->
 
