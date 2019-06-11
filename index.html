@@ -202,12 +202,6 @@
                 document.getElementById("launchMe").addEventListener("click", transformString);
                 document.addEventListener("click", makeListItem);
 
-                // function splitString() {
-                //     var ingredientString = document.getElementById("listHolder");
-                //     var res = ingredientString.split(" ");
-                //     document.getElementById("listHolder").innerHTML = res;
-                // }
-
                 function transformString() {
                     document.getElementById("listHolder").innerHTML = "This is what you need to make delicious spaghetti: <ol id=\"ingredientList\"><li>Pasta</li><li>Tomato Sauce</li><li>Cheese</li><li><input id=\"ingredientInput\" placeholder=\"Choose your final ingredient\"></li></ol>";
                 }
@@ -225,7 +219,6 @@
                             entry.appendChild(document.createTextNode(ingredient));
                             list.appendChild(entry);
                         }
-                        
                     }
                 }
 
