@@ -119,6 +119,8 @@
             </div>
             <script>
                 // Write your code here
+                document.getElementById("name").addEventListener("keyup", checkEmpty);
+                document.getElementById("pizza").addEventListener("keyup", checkEmpty);
                 document.getElementById("size").addEventListener("keyup", checkEmpty);
                 document.getElementById("remarks").addEventListener("keyup", checkEmpty);
 
@@ -135,7 +137,7 @@
                             resetPizzaOrders();
                         }
                         else {
-                            alert("Please fill in all fields!");
+                            toastr.warning("Please fill in all fields!");
                         }
                     }
                 }
@@ -150,7 +152,7 @@
                     cell1.innerHTML = nameInput.value;
                     cell2.innerHTML = pizzaInput.value;
                     cell3.innerHTML = sizeInput.value;
-                    cell4.innerHTML = remarksInput.value;
+                    cell4.innerHTML = remarksInput.value + "<i class=\"fas fa-window-close\"></i>";
                 }
 
                 function resetPizzaOrders() {
@@ -462,11 +464,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"></script>
     <script>
         toastr.options = {
-            "closeButton": true,
+            "closeButton": false,
             "debug": false,
             "newestOnTop": false,
-            "progressBar": true,
-            "positionClass": "toast-bottom-right",
+            "progressBar": false,
+            "positionClass": "toast-top-center",
             "preventDuplicates": false,
             "onclick": null,
             "showDuration": "300",
