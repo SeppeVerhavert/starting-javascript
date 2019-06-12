@@ -414,75 +414,93 @@
             </script>
         </div>
         <!-- END OF Part 4 -->
+        function myFunction() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myTable");
+            tr = table.getElementsByTagName("tr");
+            for (i = 0; i < tr.length; i++) { 
+                td=tr[i].getElementsByTagName("td")[0]; if (td) { txtValue=td.textContent ||
+                td.innerText; if (txtValue.toUpperCase().indexOf(filter)> -1) {
+                tr[i].style.display = "";
+                } else {
+                tr[i].style.display = "none";
+                }
+            }
+        }
 
-        <!-- Part 5: Make it move -->
-        <div class="row">
-            <div class="col-12 bg-white shadow-sm p-4 mx-auto mt-4">
-                <h3>Part 5: Make it move</h3>
-                <p>Below this, you have a div that needs to move left to right using JS for the motion. Make it reach
-                    the end in 2 seconds, then return in 5s. Repeat that forever.</p>
-                <hr>
-                <br>
+            <!-- Part 5: Make it move -->
+            <div class="row">
+                <div class="col-12 bg-white shadow-sm p-4 mx-auto mt-4">
+                    <h3>Part 5: Make it move</h3>
+                    <p>Below this, you have a div that needs to move left to right using JS for the motion. Make it
+                        reach
+                        the end in 2 seconds, then return in 5s. Repeat that forever.</p>
+                    <hr>
+                    <br>
 
-                <div id="moveAnimation" class="block"></div>
-            </div>
-            <script>
+                    <div id="moveAnimation" class="block"></div>
+                </div>
+                <script>
             // Write your code here
-            </script>
-        </div>
-        <!-- END OF Part 5 -->
-
-        <!-- Part 6: Make it follow -->
-        <div class="row">
-            <div class="col-12 bg-white shadow-sm p-4 mx-auto mt-4">
-                <h3>Part 6: make it follow</h3>
-                <p>Below this, you have a div that needs to move left to right using JS for the motion. It should follow
-                    the mouse horizontally.</p>
-                <hr>
-                <br>
-
-                <div id="followMouse" class="block"></div>
+                </script>
             </div>
-            <script>
+            <!-- END OF Part 5 -->
+
+            <!-- Part 6: Make it follow -->
+            <div class="row">
+                <div class="col-12 bg-white shadow-sm p-4 mx-auto mt-4">
+                    <h3>Part 6: make it follow</h3>
+                    <p>Below this, you have a div that needs to move left to right using JS for the motion. It should
+                        follow
+                        the mouse horizontally.</p>
+                    <hr>
+                    <br>
+
+                    <div id="followMouse" class="block"></div>
+                </div>
+                <script>
             // Write your code here
-            </script>
-        </div>
-        <!-- END OF Part 6 -->
-
-        <!-- Part 7: Name selector -->
-        <div class="row">
-            <div class="col-12 bg-white shadow-sm p-4 mx-auto mt-4">
-                <h3>Part 7: Sliiiiiders</h3>
-                <p>Recreate this very intuitive user interface. Insert the DOM nodes (html elements) using
-                    document.createElement();</p>
-                <img src="../input.gif" alt="Interface" />
-                <hr />
-                <br />
-
-                <div id="target"></div>
+                </script>
             </div>
-            <script>
+            <!-- END OF Part 6 -->
+
+            <!-- Part 7: Name selector -->
+            <div class="row">
+                <div class="col-12 bg-white shadow-sm p-4 mx-auto mt-4">
+                    <h3>Part 7: Sliiiiiders</h3>
+                    <p>Recreate this very intuitive user interface. Insert the DOM nodes (html elements) using
+                        document.createElement();</p>
+                    <img src="../input.gif" alt="Interface" />
+                    <hr />
+                    <br />
+
+                    <div id="target"></div>
+                </div>
+                <script>
             // Write your code here
-            </script>
-        </div>
-        <!-- END OF Part 7 -->
-
-        <!-- Part 8: Name selector2 -->
-        <div class="row">
-            <div class="col-12 bg-white shadow-sm p-4 mx-auto mt-4">
-                <h3>Part 8: Sliiiiiders again</h3>
-                <p>Put the exercise of above here again. They should both keep working. And you should only write one
-                    more line. In other words you cannot hard code ids 😉 If needed, rewrite the above code.</p>
-                <hr />
-                <br />
-
-                <div id="target2"></div>
+                </script>
             </div>
-            <script>
+            <!-- END OF Part 7 -->
+
+            <!-- Part 8: Name selector2 -->
+            <div class="row">
+                <div class="col-12 bg-white shadow-sm p-4 mx-auto mt-4">
+                    <h3>Part 8: Sliiiiiders again</h3>
+                    <p>Put the exercise of above here again. They should both keep working. And you should only write
+                        one
+                        more line. In other words you cannot hard code ids 😉 If needed, rewrite the above code.</p>
+                    <hr />
+                    <br />
+
+                    <div id="target2"></div>
+                </div>
+                <script>
             // You can put at most one line here
-            </script>
-        </div>
-        <!-- END OF Part 8 -->
+                </script>
+            </div>
+            <!-- END OF Part 8 -->
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
