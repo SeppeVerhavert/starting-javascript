@@ -413,61 +413,27 @@
                 // Write your code here  
                 document.getElementById('searchInput').addEventListener("keyup", filterTable);
 
-                function filterTable() {
-                    var input, filter, table, tr, td, i, txtValue;
-                    input = document.getElementById("searchInput");
-                    filter = input.value.toUpperCase();
-                    table = document.getElementById("searchTable");
-                    tr = table.getElementsByTagName("tr");
-                    for (i = 0; i < tr.length; i++) {
-                        td = tr[i].cells[0];
-                        if (td) {
-                            txtValue = td.textContent || td.innerText; if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                                tr[i].style.display = "";
-                            } else {
-                                tr[i].style.display = "none";
-                            }
+                function filterTable(event) {
+                    var filter = event.target.value.toUpperCase();
+                    var rows = document.querySelector("#searchTable tbody").rows;
+
+                    for (var i = 0; i < rows.length; i++) {
+                        var firstCol = rows[i].cells[0].textContent.toUpperCase();
+                        var secondCol = rows[i].cells[1].textContent.toUpperCase();
+                        var thirdCol = rows[i].cells[2].textContent.toUpperCase();
+                        var fourthCol = rows[i].cells[3].textContent.toUpperCase();
+                        var fifthCol = rows[i].cells[4].textContent.toUpperCase();
+                        var sixthCol = rows[i].cells[5].textContent.toUpperCase();
+                        if (firstCol.indexOf(filter) > -1 ||
+                            secondCol.indexOf(filter) > -1 ||
+                            thirdCol.indexOf(filter) > -1 ||
+                            fourthCol.indexOf(filter) > -1 ||
+                            fifthCol.indexOf(filter) > -1 ||
+                            sixthCol.indexOf(filter) > -1) {
+                            rows[i].style.display = "";
+                        } else {
+                            rows[i].style.display = "none";
                         }
-                        // td = tr[i].cells("td")[1];
-                        // if (td) {
-                        //     txtValue = td.textContent || td.innerText; if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                        //         tr[i].style.display = "";
-                        //     } else {
-                        //         tr[i].style.display = "none";
-                        //     }
-                        // }
-                        // td = tr[i].cells("td")[2];
-                        // if (td) {
-                        //     txtValue = td.textContent || td.innerText; if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                        //         tr[i].style.display = "";
-                        //     } else {
-                        //         tr[i].style.display = "none";
-                        //     }
-                        // }
-                        // td = tr[i].cells("td")[3];
-                        // if (td) {
-                        //     txtValue = td.textContent || td.innerText; if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                        //         tr[i].style.display = "";
-                        //     } else {
-                        //         tr[i].style.display = "none";
-                        //     }
-                        // }
-                        // td = tr[i].cells("td")[4];
-                        // if (td) {
-                        //     txtValue = td.textContent || td.innerText; if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                        //         tr[i].style.display = "";
-                        //     } else {
-                        //         tr[i].style.display = "none";
-                        //     }
-                        // }
-                        // td = tr[i].cells("td")[5];
-                        // if (td) {
-                        //     txtValue = td.textContent || td.innerText; if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                        //         tr[i].style.display = "";
-                        //     } else {
-                        //         tr[i].style.display = "none";
-                        //     }
-                        // }
                     }
                 }
             </script>
@@ -556,23 +522,23 @@
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"></script>
     <script>
-            toastr.options = {
-                "closeButton": false,
-                "debug": false,
-                "newestOnTop": false,
-                "progressBar": false,
-                "positionClass": "toast-top-center",
-                "preventDuplicates": false,
-                "onclick": null,
-                "showDuration": "300",
-                "hideDuration": "1000",
-                "timeOut": "5000",
-                "extendedTimeOut": "1000",
-                "showEasing": "swing",
-                "hideEasing": "linear",
-                "showMethod": "fadeIn",
-                "hideMethod": "fadeOut"
-            }
+        toastr.options = {
+            "closeButton": false,
+            "debug": false,
+            "newestOnTop": false,
+            "progressBar": false,
+            "positionClass": "toast-top-center",
+            "preventDuplicates": false,
+            "onclick": null,
+            "showDuration": "300",
+            "hideDuration": "1000",
+            "timeOut": "5000",
+            "extendedTimeOut": "1000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+        }
     </script>
 </body>
 
